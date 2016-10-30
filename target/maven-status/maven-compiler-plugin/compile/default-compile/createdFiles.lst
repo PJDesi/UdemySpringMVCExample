@@ -1,0 +1,5 @@
+com/pjdesi/todo/Todo.class
+com/pjdesi/todo/TodoController.class
+com/pjdesi/todo/TodoService.class
+com/pjdesi/jee/DontUseThisUserValidationService.class
+com/pjdesi/jee/DontUseThisLoginServlet.class

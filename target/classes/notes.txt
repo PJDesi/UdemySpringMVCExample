@@ -1,0 +1,41 @@
+http://localhost:8080/spring-mvc/lgin
+
+spring-mvc
+DispatcherServlet -> Front controller
+	- All requests go through DispatcherServlet
+
+
+/login -> Login Controller (Handler)
+	- DispatcherServlet sends requests to controller/handler
+	- Controller returns response to servlet if using @ResponseBody
+	- If not using @ResponseBody, then the name of the jsp is returned (ie "login" returns login.jsp)
+Hello World
+
+View Resolver
+login -> WEB-INF/views/login.jsp
+
+login.jsp -> View
+
+prefix -> /WEB-INF/views
+suffix -> .jsp
+(see ViewResolver section)
+
+MVC Architecture - see Lecture 21: Step 13 - Part 2 - Spring MVC Architecture
+FrontController (aka DispatcherServlet)
+	- in web.xml
+	- (1) finds right controller to handle request
+	
+Controller (@Controller)
+	- (2) returns back which view has to be rendered/shown ( i.e. login.jsp, but contoller returns "login")
+
+FrontController then tells ViewTemplate:
+	-(3) "login" refers to WEB-INF/views/login.jsp	
+
+	
+Model 		- Todo.java 
+View 		- jsp 		-> login.jsp 
+Controller 	- servlet 	-> LoginServlet.java (responsible for populating the model, then redirect to the view) 
+
+Front Controller - will be in front of all requests
+			DispatcherServlet - all requests go to DispatcherServlet and then the DispatcherServlet decides which controller to go to
+		LoginController, TodoController
